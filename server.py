@@ -1,3 +1,4 @@
+import asyncio
 from pathlib import Path
 
 from sanic import Sanic
@@ -14,6 +15,7 @@ async def index(request):
 
 @app.route('/json/')
 async def data(request):
+    await asyncio.sleep(2.5)
     return json(dict(name='Aubrey Plaza', job='Actress'))
 
 
